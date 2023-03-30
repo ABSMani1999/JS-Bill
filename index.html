@@ -1,0 +1,44 @@
+<!doctype>
+<html>
+	<head>
+		<title> Hotal Bill </title>
+				<style> 
+					form{ background-color:pink; border:3px solid maroon; font-size:20px; text-align:center; width:50%; }
+					button{ border:20px; }
+				</style>
+				
+	</head>
+	<body>
+		<section>
+			<div>
+				<form id="one">
+				<caption><b> BILL PAYMENT </b></caption><br><br>
+					<label for="first"> Food Rs: </label>
+					<input type="numbers" id="first" class="first" placeholder="Enter The Amount"><br><br>
+					<label for="second"> Tips %: </label>
+					<input type="percentage" id="second" class="second" placeholder="Enter The Discount"><br><br>
+					<label for="three"> Tips Rs: </label>
+					<input type="numbers" id="three" class="three" disabled ><br><br>
+					<label for="four"> Total Amount:</label>
+					<input type="numbers" id="four" class="four" disabled><br><br>
+					<input type="submit">
+				</form>
+						
+				
+			<script>
+				var form=document.getElementById("one");
+					
+					form.addEventListener('submit',function(e){
+					e.preventDefault();
+				var a=parseInt(document.getElementById('first').value);
+				var b=parseInt(document.getElementById('second').value);
+				var c=(a*b/100);
+					document.getElementById("three").value=c;
+				var d=(a+c);
+					document.getElementById("four").value=d
+					});	
+			</script>
+			</div>
+		</section>
+	</body>
+</html>
